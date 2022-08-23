@@ -24,6 +24,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master'
       with:
        #path: docker/example
-        dockerfile: example/.github/workflows/
+        dockerfile: example/.github/workflows/docker-image.yml
         registry: docker.io
         image: gunareddy7/example
