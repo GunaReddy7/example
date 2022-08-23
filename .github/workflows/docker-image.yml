@@ -7,9 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +19,7 @@ jobs:
       run: |
           echo "${{ secrets.DOCKERHUB_PASS }}" | docker login -u "gunareddy7" --password-stdin
    
-   - name: pusing the image to the Docker Hub
+    - name: pusing the image to the Docker Hub
       uses: mr-smithers-excellent/docker-build-push@v5
       if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master'
       with:
